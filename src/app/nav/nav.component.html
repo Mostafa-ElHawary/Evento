@@ -62,7 +62,7 @@
 </section> -->
 
 
-<section class="bg-gray-50 shadow-sm" [ngClass]="{'rtl': currentLang === 'ar', 'ltr': currentLang !== 'ar'}">
+<section class="bg-slate-50 shadow-sm" [ngClass]="{'rtl': currentLang === 'ar', 'ltr': currentLang !== 'ar'}">
   <nav class="container mx-auto flex items-center justify-between p-4 ">
     <div class="logo transition-transform duration-300 hover:scale-105 ">
       <img class="w-12 md:w-16 " [src]="getLogoPath()" alt="Evento Logo" />
@@ -91,7 +91,7 @@
     <button type="button" aria-label="toggle menu"
     (click)="toggleNav()"
     [class.active]="isNavOpen"
-      class="lg:hidden p-2 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      class="lg:hidden p-2 rounded-md hover:bg-gray-200 focus:outline-none ">
       <i class="fas transition-transform duration-300 ease-in-out"
       [class.fa-bars]="!isNavOpen"
       [class.fa-times]="isNavOpen"
@@ -99,7 +99,7 @@
     </button>
 
     <ul
-    class="lg:hidden flex flex-col w-full py-3 bg-slate-50 absolute left-0 right-0 top-20 transition-all duration-300 ease-in-out overflow-hidden"
+    class="lg:hidden flex flex-col w-full py-3 bg-slate-50  absolute left-0 right-0 top-20 transition-all duration-300 ease-in-out overflow-hidden"
     [class.max-h-0]="!isNavOpen"
     [class.max-h-[500px]]="isNavOpen"
     [class.opacity-0]="!isNavOpen"
@@ -109,13 +109,24 @@
   >
     <li
       *ngFor="let item of navItems; let i = index"
-      class="flex justify-center text-gray-700 py-3 font-medium hover:text-blue-500 transition-all duration-300 cursor-pointer"
+      class="container text-[1.25rem]  flex justify-start text-gray-700 py-3 font-medium hover:text-blue-500 transition-all duration-300 cursor-pointer"
       [style.transform]="isNavOpen ? 'translateY(0)' : 'translateY(-100%)'"
       [style.opacity]="isNavOpen ? '1' : '0'"
       [style.transition-delay]="i * 50 + 'ms'"
     >
-      {{ item.route }}
+      {{ item.label| translate}}
     </li>
+    <div class="container flex justify-start gap-2 ">
+      <button class="btn btn-outline text-nowrap">{{ "Log In" | translate }}</button>
+      <button class="btn btn-outline text-nowrap">{{ "Create New Account" | translate }}</button>
+      <button (click)="toggleLanguage()" class=" btn-ghost text-nowrap">
+        {{ currentLang === "en" ? "ع" : "En" }}
+        <i class="fas fa-globe ml-1"></i>
+      </button>
+    </div>
   </ul>
   </nav>
 </section>
+
+
+

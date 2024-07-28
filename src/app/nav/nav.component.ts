@@ -7,14 +7,13 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
-
   navItems = [
     { route: 'home', label: 'Home' },
     { route: 'events', label: 'Events' },
     { route: 'about', label: 'About' },
     { route: 'services', label: 'Services' },
     { route: 'contact', label: 'Contact with us' },
-    { route: 'terms', label: 'Terms' }
+    { route: 'terms', label: 'Terms' },
   ];
 
   currentLang: string;
@@ -30,13 +29,13 @@ export class NavComponent {
   }
 
   getLogoPath(): string {
-    return this.currentLang === 'ar' 
+    return this.currentLang === 'ar'
       ? './assets/evento-logo-ar.svg'
       : './assets/evento-logo-en.svg';
   }
 
   isNavOpen: boolean = false;
-  toggleNav(): void {
+  toggleNav() {
     this.isNavOpen = !this.isNavOpen;
   }
 }
