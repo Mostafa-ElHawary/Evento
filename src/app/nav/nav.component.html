@@ -1,73 +1,17 @@
-<!-- <section class="bg-[#f5f5f534] shadow-sm" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
-  <nav class="container flex items-center justify-between p-2">
-    <div
-      class="logo flex flex-row items-center h-10 w-3/12 md:w-1/12 transition-transform duration-300 hover:scale-105">
-      <img class="w-14 md:w-16" src="./assets/evento-logo-en.svg" alt="Evento Logo" />
-    </div>
-
-    <div class="links hidden flex-row lg:block w-8/12 lg:w-7/12">
-      <ul class="flex w-full h-10">
-        <li class="cursor-pointer px-2 flex items-end text-lg transition-colors duration-300">
-          <a routerLink="home" routerLinkActive="text-green-300">
-            {{ "Home" | translate }}</a>
-        </li>
-        <li class="cursor-pointer px-2 flex items-end text-lg transition-colors duration-300">
-          <a routerLink="events" routerLinkActive="text-green-300">
-            {{ "Events" | translate }}</a>
-        </li>
-        <li class="cursor-pointer px-2 flex items-end text-lg transition-colors duration-300">
-          <a routerLink="about" routerLinkActive="text-green-300">
-            {{ "About" | translate }}</a>
-        </li>
-        <li class="cursor-pointer px-2 flex items-end text-lg transition-colors duration-300">
-          <a routerLink="services" routerLinkActive="text-green-300">
-            {{ "Services" | translate }}</a>
-        </li>
-        <li class="cursor-pointer px-2 flex items-end text-lg transition-colors duration-300">
-          <a routerLink="contact" routerLinkActive="text-green-300">
-            {{ "Contact with us" | translate }}</a>
-        </li>
-        <li class="cursor-pointer px-2 flex items-end text-lg transition-colors duration-300">
-          <a routerLink="terms" routerLinkActive="text-green-300">
-            {{ "Terms" | translate }}</a>
-        </li>
-        
-      </ul>
-    </div>
-
-
-    <div class="signup hidden h-10 lg:flex items-center space-x-2 w-4/12 justify-end gap-2">
-      <button
-        class="px-2 flex items-end text-lg bg-white text-black rounded-xl border-2 border-[#eee] hover:bg-blue-600 transition-colors duration-300"
-        tabindex="0">
-        {{ "Log In" | translate }}
-      </button>
-      <button
-        class="flex flex-row flex-nowrap px-2 items-end text-lg bg-white text-black rounded-xl border-2 border-[#eee] hover:bg-green-600 transition-colors duration-300"
-        tabindex="0">
-        {{ "Create New Account" | translate }}
-      </button>
-      <button type="button" (click)="toggleLanguage()"
-        class="px-2 flex items-end rounded transition-colors duration-300">
-        <span>{{ currentLang === "en" ? "ع" : "En" }}</span>
-        <i class="fas fa-globe ml-1"></i>
-      </button>
-    </div>
-
-    <button type="button" aria-label="toggle menu"
-      class="lg:hidden p-2 text-xl rounded hover:bg-gray-200 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-      <i class="fas fa-bars"></i>
-    </button>
-  </nav>
-</section> -->
-
 <section
-  class="bg-slate-50 shadow-sm"
+  class="shadow-sm"
   [ngClass]="{ rtl: currentLang === 'ar', ltr: currentLang !== 'ar' }"
 >
   <nav class="container mx-auto flex items-center justify-between p-4">
     <div class="logo transition-transform duration-300 hover:scale-105">
-      <img class="w-12 md:w-16" [src]="getLogoPath()" alt="Evento Logo" />
+      <a
+        (click)="toggleNav()"
+        routerLink="home"
+        routerLinkActive="text-green-500 font-semibold px-0 m-0 flex justify-end"
+        class="hover:text-green-400 transition-colors duration-300 text-nowrap"
+      >
+        <img class="w-12 md:w-16" [src]="getLogoPath()" alt="Evento Logo" />
+      </a>
     </div>
 
     <div class="hidden lg:block flex-grow">
@@ -113,7 +57,7 @@
     </button>
 
     <ul
-      class="lg:hidden flex flex-col w-full py-3 bg-slate-50 absolute left-0 right-0 top-20 transition-all duration-300 ease-in-out overflow-hidden"
+      class="lg:hidden flex flex-col w-full py-3 bg-slate-50 absolute left-0 right-0 top-20 transition-all duration-300 ease-in-out overflow-hidden z-[999]"
       [class.max-h-0]="!isNavOpen"
       [class.max-h-[500px]]="isNavOpen"
       [class.opacity-0]="!isNavOpen"
@@ -129,6 +73,7 @@
         [style.transition-delay]="i * 50 + 'ms'"
       >
         <a
+          (click)="toggleNav()"
           [routerLink]="item.route"
           routerLinkActive="text-green-500 font-semibold px-0 m-0 flex justify-end"
           class="hover:text-green-400 transition-colors duration-300 text-nowrap"

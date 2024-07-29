@@ -1,0 +1,47 @@
+<section class="bg-gray-50 py-32" [dir]="'dir' | translate">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col-reverse md:flex-row items-center">
+      <div class="w-full md:w-1/2 mt-10 md:mt-0 Z-[995]">
+        <p class="text-green-600 font-semibold mb-2">
+          {{ "hero.tagline" | translate }}
+        </p>
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          {{ "hero.title" | translate }}
+        </h1>
+        <p class="text-gray-600 mb-8 leading-relaxed">
+          {{ "hero.description" | translate }}
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center sm:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
+        >
+          <a
+            href="/events"
+            class="btn btn-primary bg-[#3dbeb4] border border-[rgb(61,190,180)] cursor-pointer"
+          >
+            <i class="fas fa-ticket-alt"></i>
+            {{ "hero.bookButton" | translate }}
+          </a>
+          <a
+            href="/dashboard/new-event"
+            class="btn btn-secondary bg-[#f89e22] border border-[#f89e22] cursor-pointer"
+          >
+            <i class="fas fa-plus"></i>
+            {{ "hero.addEventButton" | translate }}
+          </a>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2  Z-[995] ">
+        <div class="relative">
+          <img
+            src="assets/hero-main.webp"
+            width="500"
+            height="400"
+            alt="Hero image"
+            class="w-full h-auto rounded-lg"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+.l-homePage:before {
+    content: "";
+    background-image: url(/assets/hero-bg-lines.webp);
+    left: 0;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    z-index: 0;
+}

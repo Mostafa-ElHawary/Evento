@@ -1,12 +1,18 @@
 {
-    "Home": "Home",
-    "Events":"Events",
-    "About": "About",
-    "Services": "Services",
-    "Contact with us": "Contact",
-    "Log In": "Log In",
-    "Terms":"Terms",
-    "Create New Account": "Create New Account",
-    "Home works":"home works",
-    "Child-home1 works":"child-home1 works"
+  "dir": "ltr",
+  "Home": "Home",
+  "Events": "Events",
+  "About": "About",
+  "Services": "Services",
+  "Contact with us": "Contact",
+  "Log In": "Log In",
+  "Terms": "Terms",
+  "Create New Account": "Create New Account",
+  "hero": {
+    "tagline": "Kingdom events in one place",
+    "title": "Search, Choose, Book, Enjoy",
+    "description": "Evento has created a platform that offers a package of integrated services that give it technical solutions and professionally manage various events, providing them with a service of booking and selling them online, in addition to the feature of browsing upcoming events, various recreational activities and cultural gatherings.",
+    "bookButton": "Book your ticket",
+    "addEventButton": "Add your event"
   }
+}

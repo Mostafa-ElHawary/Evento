@@ -4,12 +4,13 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { LanguageSwitcherComponent } from './language-switcher.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
-import { ChildHome1Component } from './home/child-home1/child-home1.component';
+import { HeroComponent } from './home/hero/hero.component';
 import { EventsComponent } from './events/events.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AboutComponent } from './about/about.component';
@@ -24,22 +25,32 @@ export class CustomTranslateLoader implements TranslateLoader {
     return this.http.get(`/assets/i18n/${lang}.json`);
   }
 }
-
-// export function HttpLoaderFactory(http: HttpClient) {
-//   return new TranslateHttpLoader(http);
-// }
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavComponent, ChildHome1Component, EventsComponent, NotfoundComponent, AboutComponent, ServicesComponent, ContactComponent, TermsComponent],
+  declarations: [
+    AppComponent,
+    LanguageSwitcherComponent,
+    HomeComponent,
+    NavComponent,
+    HeroComponent,
+    EventsComponent,
+    NotfoundComponent,
+    AboutComponent,
+    ServicesComponent,
+    ContactComponent,
+    TermsComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useClass: CustomTranslateLoader,
+        useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
     }),
