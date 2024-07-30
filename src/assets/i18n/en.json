@@ -14,5 +14,18 @@
     "description": "Evento has created a platform that offers a package of integrated services that give it technical solutions and professionally manage various events, providing them with a service of booking and selling them online, in addition to the feature of browsing upcoming events, various recreational activities and cultural gatherings.",
     "bookButton": "Book your ticket",
     "addEventButton": "Add your event"
+  },
+  "servicesHome": {
+    "tagline": "Do you know our services?",
+    "title": "Our services have no limits in registration and ticket sale",
+
+    "tagline1": "Providing an integrated electronic system",
+    "des1": "To manage all kinds of events and conferences in an easy and simple way",
+
+    "tagline2": "Event dashboard",
+    "des2": "To control all event data and details such as ticket fees and discount coupons",
+
+    "tagline3": "Organizing the ticketing process",
+    "des3": "To manage all kinds of events and conferences in an easy and simple way"
   }
 }

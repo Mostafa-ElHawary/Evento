@@ -1,0 +1,25 @@
+.l-ourservices {
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+@media (min-width: 992px) {
+  .l-ourservices {
+    padding-bottom: 100px;
+  }
+}
+.l-ourservices:before {
+  content: url(../../../assets/blue-dots.png);
+  top: 350px;
+  right: 0;
+  position: absolute;
+  z-index: 0;
+}
+.l-ourservices:after {
+  content: url(../../../assets/blue-dots.png);
+  top: 150px;
+  left: 0;
+  position: absolute;
+  z-index: 0;
+}
