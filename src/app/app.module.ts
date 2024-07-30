@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { HeroComponent } from './home/hero/hero.component';
-import { EventsComponent } from './events/events.component';
+import { EventsComponent } from './home/events/events.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './home/services/services.component';
@@ -38,7 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NavComponent,
     HeroComponent,
     EventsComponent,
-  
+    EventCardComponent,
     NotfoundComponent,
     AboutComponent,
     ServicesComponent,
@@ -56,7 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
-    EventsModule,
+    // EventsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
